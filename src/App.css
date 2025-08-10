@@ -1,38 +1,88 @@
 .app-container {
   padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Search bar styling */
+.search-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* User list container */
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
 }
 
+/* User card styling */
 .user-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-  width: 200px;
-  text-align: center;
-  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  width: 220px;
+  min-height: 260px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile image */
 .user-card img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
+/* Name styling */
 .user-name {
   font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
+/* Email & phone */
 .user-email,
 .user-phone {
-  font-size: 0.9em;
+  font-size: 0.85rem;
   color: #555;
+  text-align: center;
+  margin: 2px 0;
+  word-break: break-word;
 }
 
+/* Loading screen */
 .loading {
   display: flex;
   align-items: center;

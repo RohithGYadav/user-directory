@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch("https://dummyjson.com/users")
@@ -15,6 +16,12 @@ function App() {
       })
       .catch(() => setLoading(false));
   }, []);
+
+  const filteredUsers = users.filter((user) =>
+    `${user.firstName} ${user.lastName}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
 
   if (loading) {
     return (
@@ -27,8 +34,18 @@ function App() {
   return (
     <div className="app-container">
       <h1>User Directory</h1>
+
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search users..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="search-input"
+      />
+
       <div className="user-list">
-        {users.map((user) => (
+        {filteredUsers.map((user) => (
           <div className="user-card" key={user.id}>
             <img src={user.image} alt={user.firstName} />
             <p className="user-name">
