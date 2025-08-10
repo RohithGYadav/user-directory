@@ -1,14 +1,15 @@
 .app-container {
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background-color: #1e1e2f;  /* Dark slate blue-gray */
   min-height: 100vh;
+  color: #e0e0e0;  /* Light gray text for contrast */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #f0a500;  /* Warm gold accent */
 }
 
 /* Controls container */
@@ -24,20 +25,23 @@ h1 {
 .search-input {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #44475a;
   font-size: 1rem;
   flex: 1;
   min-width: 200px;
   max-width: 300px;
+  background-color: #282c3a; /* Slightly lighter dark */
+  color: #e0e0e0;
 }
 
 /* Filter dropdown */
 .filter-select {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #44475a;
   font-size: 1rem;
-  background: white;
+  background: #282c3a;
+  color: #e0e0e0;
 }
 
 /* User list container */
@@ -53,18 +57,19 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #2a2e42;  /* Dark card background */
+  border: 1px solid #44475a;
   border-radius: 12px;
   padding: 15px;
   width: 220px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(240, 165, 0, 0.4); /* subtle gold glow */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #e0e0e0;
 }
 
 .user-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(240, 165, 0, 0.7);
 }
 
 /* Profile image */
@@ -74,6 +79,7 @@ h1 {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
+  border: 2px solid #f0a500; /* golden border */
 }
 
 /* Name styling */
@@ -92,7 +98,7 @@ h1 {
 .user-email,
 .user-phone {
   font-size: 0.85rem;
-  color: #555;
+  color: #c0c0c0;
   text-align: center;
   margin: 2px 0;
   word-break: break-word;
@@ -105,5 +111,50 @@ h1 {
   justify-content: center;
   height: 80vh;
   font-size: 1.2rem;
-  color: #555;
+  color: #e0e0e0;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 47, 0.85); /* dark transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal box */
+.modal-content {
+  background: #2a2e42;
+  border-radius: 12px;
+  padding: 20px 30px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(240, 165, 0, 0.8);
+  text-align: center;
+  color: #e0e0e0;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #f0a500;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #fff3b0;
 }
